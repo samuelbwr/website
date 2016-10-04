@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="870"
-   height="870"
+   width="520"
+   height="740"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
@@ -234,10 +234,10 @@
      id="layer1"
      transform="translate(32.485813,-339.32067)">
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       style="fill:white;fill-opacity:1;stroke:none"
        id="rect4562"
-       width="870.92041"
-       height="870"
+       width="520"
+       height="740"
        x="-32.485813"
        y="339.32065" />
     <rect
@@ -264,7 +264,7 @@
        transform="translate(-7.4283884,360.64489)" />
     <g
        id="g4299"
-       transform="translate(60,-2)">
+       transform="translate(-32,120) scale(0.75)">
       <g
          transform="translate(52.317547,-19.440188)"
          id="g3273">
@@ -1644,7 +1644,7 @@
     </g>
     </g>
 
-    <g transform="translate(55, 1180)">
+    <g transform="translate(0, 1020) scale(0.65)">
       <g transform="scale(0.07, -0.07)">
 
         <path transform="translate(0,0)"
