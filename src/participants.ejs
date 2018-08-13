@@ -51,6 +51,7 @@ window.onload = function() {
     var sum = 0;
     var sum_friday = 0;
     var sum_saturday = 0;
+    var sum_only_saturday = 0;
     $.each(data, function(index, participant) {
       var source = $("#participant-template").html();
       var template = Handlebars.compile(source);
@@ -62,8 +63,16 @@ window.onload = function() {
       diet_requs[diet_requ] = currentCount + 1;
 
       if(participant.when.friday) sum_friday++;
-      if(participant.when.saturday) sum_saturday++;
+      if(participant.when.saturday) {
+        if(!participant.when.friday && participant.tshirt) {
+          console.log("Only Saturday:", participant.tshirt, participant.name );
+          sum_only_saturday++;
+        }
+        sum_saturday++;
+      }
     });
+    console.log("participants attending only on Saturday:", sum_only_saturday);
+
     console.log('diets requirements:', diet_requs);
 
     $("#participants").append(items.join(""));
@@ -72,9 +81,8 @@ window.onload = function() {
     $("#sum_saturday").append(sum_saturday+" participants on Saturday (max. 100)");
 
     function notEmpty(field) { return !!field; }
-
   });
-  
+
   Handlebars.registerHelper('taglist', function(listItems) {
     return listItems ? listItems.map(tag => `#${tag}`).join(' ') : '';
   });
