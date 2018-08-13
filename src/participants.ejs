@@ -48,6 +48,7 @@ window.onload = function() {
   $.getJSON("/participants.json", function(data) {
     var items = [];
     var diet_requs = {};
+    var tshirtSizes = {};
     var sum = 0;
     var sum_friday = 0;
     var sum_saturday = 0;
@@ -70,8 +71,12 @@ window.onload = function() {
         }
         sum_saturday++;
       }
+      var tshirt = participant.tshirt || 'none';
+      tshirts = tshirtSizes[tshirt] || 0;
+      tshirtSizes[tshirt] = tshirts + 1;
     });
     console.log("participants attending only on Saturday:", sum_only_saturday);
+    console.log("T-Shirts needed:", tshirtSizes);
 
     console.log('diets requirements:', diet_requs);
 
