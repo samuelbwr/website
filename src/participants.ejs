@@ -47,6 +47,7 @@
 window.onload = function() {
   $.getJSON("/participants.json", function(data) {
     var items = [];
+    var diet_requs = {};
     var sum = 0;
     var sum_friday = 0;
     var sum_saturday = 0;
@@ -56,9 +57,15 @@ window.onload = function() {
       var card = template(participant);
       items.push(card);
       sum++;
+      var diet_requ = participant.dietary_requirements || 'none';
+      var currentCount = diet_requs[diet_requ] || 0;
+      diet_requs[diet_requ] = currentCount + 1;
+
       if(participant.when.friday) sum_friday++;
       if(participant.when.saturday) sum_saturday++;
     });
+    console.log('diets requirements:', diet_requs);
+
     $("#participants").append(items.join(""));
     $("#sum").append(sum+" participants");
     $("#sum_friday").append(sum_friday+" participants on Friday (max. 100)");
