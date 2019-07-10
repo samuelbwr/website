@@ -1,0 +1,17 @@
+{
+    "name": "Samuel Berwanger",
+    "company": "",
+    "when": {
+      "friday": false,
+      "friday_party": true,
+      "saturday": true
+    },
+    "tags": ["Javascript", "React", "GraphQL", "NodeJS", "Serverless"],
+    "vegan": false,
+    "vegetarian": false,
+    "allergies": "",
+    "what_is_my_connection_to_javascript": "8 Years working with front end development and 1 working with NodeJS",
+    "what_can_i_contribute": "Serverless",
+    "tshirt": "M-S",
+    "twitter": "none"
+  }
